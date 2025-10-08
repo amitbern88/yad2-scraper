@@ -83,12 +83,14 @@ const createPushFlagForWorkflow = () => {
 const scrape = async (topic, url) => {
     const TELEGRAM_API_TOKEN = process.env.API_TOKEN;
     const CHAT_ID = process.env.CHAT_ID;
-    const telenode = new Telenode({TELEGRAM_API_TOKEN})
-    if (!process.env.API_TOKEN || !process.env.CHAT_ID {
+//    const telenode = new Telenode({TELEGRAM_API_TOKEN})
+    if (!process.env.API_TOKEN || !process.env.CHAT_ID) {
         console.error("Missing Telegram API token or chat ID.");
         process.exit(1);
     }
+    const telenode = new Telenode({ apiToken: TELEGRAM_API_TOKEN });
     //const telenode = new Telenode({ apiToken: TELEGRAM_API_TOKEN })
+
     try {
         await telenode.sendTextMessage(`Starting scanning ${topic} on link:\n${url}`, CHAT_ID)
         const scrapeImgResults = await scrapeItemsAndExtractImgUrls(url);
@@ -106,7 +108,7 @@ const scrape = async (topic, url) => {
             errMsg = `Error: ${errMsg}`
         }
         await telenode.sendTextMessage(`Scan workflow failed... 😥\n${errMsg}`, CHAT_ID)
-        throw new Error(e)
+        throw new Error(errMsg)
     }
 }
 
