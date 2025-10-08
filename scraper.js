@@ -91,16 +91,16 @@ const scrape = async (topic, url) => {
         if (newItems.length > 0) {
             const newItemsJoined = newItems.join("\n----------\n");
             const msg = `${newItems.length} new items:\n${newItemsJoined}`
-            await telenode.sendTextMessage(msg, chatId);
+            await telenode.sendTextMessage(msg, CHAT_ID);
         } else {
-            await telenode.sendTextMessage("No new items were added", chatId);
+            await telenode.sendTextMessage("No new items were added", CHAT_ID);
         }
     } catch (e) {
         let errMsg = e?.message || "";
         if (errMsg) {
             errMsg = `Error: ${errMsg}`
         }
-        await telenode.sendTextMessage(`Scan workflow failed... 😥\n${errMsg}`, chatId)
+        await telenode.sendTextMessage(`Scan workflow failed... 😥\n${errMsg}`, CHAT_ID)
         throw new Error(e)
     }
 }
