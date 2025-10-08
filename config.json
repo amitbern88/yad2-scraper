@@ -1,10 +1,10 @@
 {
-  "telegramApiToken": null,
-  "chatId": null,
+  "telegramApiToken": "7222912320:AAFKBcjkxxqWTk5Glzd5rgoNqizUBdIOHjg", 
+  "chatId": 401183731,
   "projects": [
     {
-      "topic": "",
-      "url": ""
+      "topic": "Shoham Houses",
+      "url": "https://www.yad2.co.il/realestate/forsale?minRooms=5.5&property=3%2C5%2C39&topArea=2&area=98&city=1304&zoom=14"
     }
   ]
 }
