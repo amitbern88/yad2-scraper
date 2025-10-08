@@ -81,10 +81,10 @@ const createPushFlagForWorkflow = () => {
 }
 
 const scrape = async (topic, url) => {
-    const TELEGRAM_API_TOKEN = process.env.API_TOKEN || config.telegramApiToken;
-    const CHAT_ID = process.env.CHAT_ID || config.chatId;
+    const TELEGRAM_API_TOKEN = process.env.API_TOKEN;
+    const CHAT_ID = process.env.CHAT_ID;
     const telenode = new Telenode({TELEGRAM_API_TOKEN})
-    if (!process.env.telegramApiToken || !process.env.CHAT_ID {
+    if (!process.env.API_TOKEN || !process.env.CHAT_ID {
         console.error("Missing Telegram API token or chat ID.");
         process.exit(1);
     }
