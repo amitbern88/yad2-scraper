@@ -81,8 +81,8 @@ const createPushFlagForWorkflow = () => {
 }
 
 const scrape = async (topic, url) => {
-    const apiToken = process.env.API_TOKEN || config.telegramApiToken;
-    const chatId = process.env.CHAT_ID || config.chatId;
+    const TELEGRAM_API_TOKEN = process.env.API_TOKEN || config.telegramApiToken;
+    const CHAT_ID = process.env.CHAT_ID || config.chatId;
     const telenode = new Telenode({apiToken})
     try {
         await telenode.sendTextMessage(`Starting scanning ${topic} on link:\n${url}`, chatId)
