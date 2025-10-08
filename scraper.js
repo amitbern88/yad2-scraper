@@ -3,35 +3,13 @@ const Telenode = require('telenode-js');
 const fs = require('fs');
 const config = require('./config.json');
 
-/const getYad2Response = async (url) => {
+const getYad2Response = async (url) => {
     const requestOptions = {
         method: 'GET',
         redirect: 'follow'
     };
     try {
         const res = await fetch(url, requestOptions)
-        return await res.text()
-    } catch (err) {
-        console.log(err)
-    }
-}
-/
-
-const getYad2Response = async (url) => {
-    const requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        // FIX: Add User-Agent to mimic a browser
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
-    };
-    try {
-        const res = await fetch(url, requestOptions)
-        // Check for non-200 status code explicitly, as fetch doesn't throw on 4xx/5xx
-        if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
-        }
         return await res.text()
     } catch (err) {
         console.log(err)
