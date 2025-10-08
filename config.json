@@ -1,6 +1,6 @@
 {
-  "telegramApiToken": "7222912320:AAFKBcjkxxqWTk5Glzd5rgoNqizUBdIOHjg", 
-  "chatId": 401183731,
+  "telegramApiToken": null, 
+  "chatId": null,
   "projects": [
     {
       "topic": "Shoham Houses",
