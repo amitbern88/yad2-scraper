@@ -1,6 +1,6 @@
 {
-  "telegramApiToken": null, 
-  "chatId": null,
+  "TELEGRAM_API_TOKEN": null, 
+  "CHAT_ID": null:,
   "projects": [
     {
       "topic": "Shoham Houses",
