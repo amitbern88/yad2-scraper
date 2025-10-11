@@ -84,7 +84,7 @@ const scrape = async (topic, url) => {
     const TELEGRAM_API_TOKEN = process.env.telegramApiToken;
     const CHAT_ID = process.env.chatId;
 //    const telenode = new Telenode({TELEGRAM_API_TOKEN})
-    if (!process.env.API_TOKEN || !process.env.CHAT_ID) {
+    if (!process.env.telegramApiToken || !process.env.chatId) {
         console.error("Missing Telegram API token or chat ID.");
         process.exit(1);
     }
