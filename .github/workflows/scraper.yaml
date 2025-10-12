@@ -2,7 +2,7 @@ name: Yad2 Scraper
 
 on:
   schedule:
-    - cron: '*/60 8-18 * * 0-5'
+    - cron: '*/300 8-18 * * 0-5'
   workflow_dispatch:
     branches:
       - '**'
